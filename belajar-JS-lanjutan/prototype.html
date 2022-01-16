@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+<script>
+	function Mahasiswa(nama, energi) {
+		this.nama = nama;
+		this.energi = energi;
+	}
+	Mahasiswa.prototype.makan = function(porsi) {
+		this.energi += porsi;
+		return `halo ${this.nama}, selamat makan`;
+	}
+	Mahasiswa.prototype.main = function(jam) {
+		this.energi -= jam;
+		return `halo ${this.nama}, selamat bermain`;
+	};
+
+	let fihan = new Mahasiswa('fihan', 10);
+	let miku = new Mahasiswa('miku', 9);
+
+	console.log(fihan.makan(5));
+</script>
+</body>
+</html>

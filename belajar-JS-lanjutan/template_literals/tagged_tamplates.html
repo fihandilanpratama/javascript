@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Tagged Templates</title>
+   <style>
+      .highlight { background-color: darkgrey; }
+   </style>
+</head>
+<body>
+   <h1></h1>
+
+<script>
+
+   const nama = 'fihan dilan pratama';
+   const umur = 21;
+
+   // argumen pertama -> string 
+   // argumen kedua -> expression
+   function coba(strings, ...args) {
+      let result = ``;
+      strings.forEach((str, i) => {
+         result += `${str}<span class="highlight">${args[i] || ''}</span>`;
+      });
+      return result;
+   }
+
+   const str = coba`Halo, nama saya ${nama}, saya berumur ${umur} tahun.`;
+   // console.log(str);
+   document.querySelector('h1').innerHTML = str;
+
+</script>
+</html>

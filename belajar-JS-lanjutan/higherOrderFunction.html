@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style type="text/css">
+		pre { font-size: 20px; line-height: 10px; margin-left: 100px; }
+	</style>
+</head>
+<body>
+
+	<h2>Higher order function adalah function yang paramaternya adalah function, dan parameter itu akan disebut sebagai callback</h2>
+	<br>
+	<pre>function repeat(n, action) { </pre>
+	<pre>	for(let i = 0; i <= n; i++) { </pre>
+	<pre>		action(i); </pre>
+	<pre>	}</pre>	
+	<pre>}</pre>
+	<br>
+	<pre>repeat(10, console.log);</pre>
+
+<script>
+	
+	// function kerjakanTugas (matakuliah, selesai) {
+	// 	console.log(`Mulai mengerjakan tugas ${matakuliah} ...`);
+	// 	selesai();
+	// }
+	// function selesai() {
+	// 	console.log('selesai mengerjakan tugas!');
+	// }
+	// kerjakanTugas('Metode Numerik', selesai);
+
+	// function repeat(n, action) {
+	// 	for(let i = 0; i <= n; i++) {
+	// 		action(i);
+	// 	}
+	// }
+
+	// repeat(10, console.log);
+
+	// filter, map, dan reduce
+	// const angka = [-1, 8, 9, 1, 4, -5, -4, 3, 2, 9];
+
+	// mencari angka >= 3 dengan for biasa
+	// const arrBaru = [];
+	// for( let i = 0; i < angka.length; i++) {
+	// 	if( angka[i] >= 3 ) {
+	// 		arrBaru.push(angka[i]);
+	// 	}
+	// }
+
+	// mencari angka >= 3 filter
+	// const arrBaru = angka.filter(a => a >= 3);
+
+	// map 
+	// kalikan semua semua element dalam array angka dengan 2
+	// const arrBaru = angka.map( a => a * 2);
+
+	// reduce
+	// jumlahkan semua element pada array
+	// const arrBaru = angka.reduce( (accumulator, currentvalue) => accumulator + currentvalue );
+
+	// chaining
+	// cari angaka > 5, kalikan 3, jumlahkan
+	const angka = [-1, 8, 9, 1, 4, -5, -4, 3, 2, 9];
+	const hasil = angka.filter((a) => a >= 5) // [8,9,9]
+		.map(a => a * 3) // [24,27,27]
+		.reduce((acc, curr) => acc + curr); // [78]
+
+	console.log(angka);
+	console.log(hasil);
+
+
+</script>
+</body>
+</html>

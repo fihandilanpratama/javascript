@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>membuat Object pada javascript</h1>
+	<ul>
+		<li>object literal</li>
+		<li>function declaration</li>
+		<li>constructor function</li>
+		<li>object.create()</li>
+	</ul>
+<script>
+	// let mahasiswa = {
+	// 	nama: 'fihan dilan pratama',
+	// 	energi: 10,
+	// 	makan: function(porsi) {
+	// 		this.energi += porsi;
+	// 		console.log(`Halo ${this.nama}, Selamat makan`);
+	// 	}
+	// }
+
+	// function Mahasiswa(nama, energi) {
+	// 	let mahasiswa = {};
+	// 	mahasiswa.nama = nama;
+	// 	mahasiswa.energi = energi;
+	// 	mahasiswa.makan = function(porsi) {
+	// 		this.energi =+ porsi;
+	// 		console.log(`halo ${this.nama}, selamat makan`);
+	// 	}
+	// 	mahasiswa.main = function(jam) {
+	// 		this.energi -= jam;
+	// 		console.log(`halo ${this.nama}, selamat bermain`);
+	// 	}
+	// 	return mahasiswa;
+	// }
+
+	// let fihan = Mahasiswa('fihan', 10);
+	// let miku = Mahasiswa('miku', 9);
+
+	function Mahasiswa(nama, energi) {
+		this.nama = nama;
+		this.energi = energi;
+	}
+	Mahasiswa.prototype.makan = function(porsi) {
+		this.energi += porsi;
+		return console.log(`halo ${this.nama}, selamat makan`);
+	}
+	Mahasiswa.prototype.main = function(jam) {
+		this.energi -= jam;
+		return console.log(`halo ${this.nama}, selamat bermain`);
+	};
+
+	let fihan = new Mahasiswa('fihan', 10);
+	let miku = new Mahasiswa('miku', 9);
+
+
+</script>
+</body>
+</html>

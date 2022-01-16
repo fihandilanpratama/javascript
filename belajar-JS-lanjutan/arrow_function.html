@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Arrow Function</title>
+</head>
+<body>
+
+<script>
+	
+// function expression
+// let tampilNama = function(nama) {
+// 	console.log(`Halo ${nama}.`)
+// }
+// tampilNama('fihan dilan pratama');
+
+// arrow function 1 parameter
+// let tampilNama = nama => `halo ${nama}.`;
+// console.log(tampilNama('fihan dilan'));
+
+const numbers = [2,4,6,8];
+let numbersNew = numbers.map(function(number) {
+	return number * 2;
+});
+
+// dengan arrow function
+const names = ['fihan dilan pratama', 'nakano miku', 'nakano ichika'];
+const namesNew = names.map( name => ({ 
+	nama: name,
+	jumlahHuruf: name.length
+ }) ); // mereturn object ada 3
+
+console.table(names);
+console.table(namesNew);
+console.table(namesNew[2]);
+console.log(`Nama : ${namesNew[1].nama}\nJumlah Huruf : ${namesNew[1].jumlahHuruf}`);
+
+
+</script>
+</body>
+</html>

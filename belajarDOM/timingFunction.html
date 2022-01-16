@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Timing Function</title>
+	<style>
+		p {
+			font-family: monserrat;
+		}
+	</style>
+</head>
+<body>
+	<h1 id="teks">Timing Function Pada javascript</h1>
+	<button id="btn">berhenti</button>
+	<p>setTimeout() : menjalankan program/baris kode setelah menunggu sejumlah waktu tertentu. gunakan clearTimeout untuk memeberhentikan sebelum waktu yang ditetapkan.</p>
+	<p>setInterval() : menjalankan program/baris kode secara berulang-ulang.</p>
+	<p>keduanya merupakan bagian dari object window tapi karena window itu global maka tidak perlu manambahkan keyword window di depannya.</p>
+
+
+<script>
+	
+	// setTimeout
+	// function tampilkanPesan() {
+	// 	console.log('Hello world');
+	// }
+
+	// const tes = setTimeout(tampilkanPesan, 5000);
+
+	// const btn = document.getElementById('btn');
+	// btn.addEventListener('click', function() {
+	// 	clearTimeout(tes);
+	// 	console.log('selesai');
+	// });
+
+	// setInterval
+	// let i = 0;
+	// const tes = setInterval(function() {
+	// 	console.log("hello " + i++);
+	// }, 1000);
+
+	// const btn = document.getElementById('btn');
+	// btn.addEventListener('click', function() {
+	// 	clearInterval(tes);
+	// 	console.log('selesai');
+	// });
+	const info = document.getElementById('teks');
+	info.style.textAlign = 'center';
+
+
+	// Program Hitung Mundur
+	const hitungMundur = setInterval(function() {
+
+		const sekarang = new Date().getTime();
+		const waktuTujuan = new Date('Fri Sep 19 2020 15:41:00').getTime();
+		const selisih = waktuTujuan - sekarang;
+
+		const hari = Math.floor(selisih / (1000 * 60 * 60 * 24));
+		const jam = Math.floor(selisih % (1000 * 60 * 60 * 24) / (1000 * 60 * 60));
+		const menit = Math.floor(selisih % (1000 * 60 * 60) / (1000 * 60));
+		const detik = Math.floor(selisih % (1000 * 60) / (1000));
+
+		// console.log(hari);
+		// console.log(jam);
+		// console.log(menit);
+		// console.log(detik);
+
+
+		info.innerHTML = `Waktu yang tersisa adalah ${hari} hari ${jam} jam ${menit} menit ${detik} detik`;
+
+		if( selisih < 0 ) {
+			clearInterval(hitungMundur);
+			info.innerHTML = 'Waktu Habis';
+		}
+
+	}, 1000);
+	
+	// perbarui versi
+	// jika hari || jam || menit == 0 maka jangan tampilkan, tampilkan yang != 0
+	
+	 
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Tebak Angka</title>
+</head>
+<body>
+<script>
+// tebak angka 1 - 10 // tiga kesempatan
+let tanya = true;
+while( tanya ) {
+
+	let kesempatan = 3;
+	let p = parseInt(prompt('Tebak Angka 1 - 10 (int) \nAnda Punya ' + kesempatan + ' kesempatan'));
+
+	if( p > 0 && p < 11 ) {
+		const comp = Math.floor((Math.random() * 10) + 1);
+
+		for( kesempatan = 2; kesempatan != 0; kesempatan-- ) {
+			if( p == comp ) {
+				alert('anda benar angka yang dicari adalah ' + comp);
+				break;
+			} else if( p < comp ) {
+				p = parseInt(prompt('angka yang anda masukkan lebih kecil dari angka yang dicari.\nkesempatan anda tinggal ' + kesempatan));
+			} else if( p > comp ) {
+				p = parseInt(prompt('angka yang anda masukkan lebih besar dari angka yang dicari.\nkesempatan anda tinggal ' + kesempatan));
+			} else {
+				alert('inputan anda tidak valid!\ntolong masukkan angka yang valid !');
+				break;
+			}
+		}
+
+		if( kesempatan == 0 && p == comp ) {  
+			// ketika kesempatan == 1 pada loop di atas dan plyer menjwab benar maka akan masuk ke sini
+			alert('anda benar angka yang dicari adalah ' + comp);
+		} else if( kesempatan == 0 ) {
+			// jika kesempatan habis dan player masih salah
+			alert('kesempatan anda habis angka yang dicari adalah ' +  comp);
+		}
+
+		// tanya untuk bermain lagi atau tidak
+		tanya = confirm('mau bermain lagi ?')
+
+		console.log('nilai comp = ' + comp);
+
+	} else {
+		alert('tolong masukkan inputan yang valid !');
+	}
+
+}
+
+alert('terima kasih telah bermain');
+
+
+</script>
+</body>
+</html>

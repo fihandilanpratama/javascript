@@ -1,0 +1,92 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+
+/*--------------------------------------*/
+.container {
+	border: 2px solid lime;
+	width: 800px;
+	margin: 50px auto;
+	padding: 10px;
+}
+.area-player ul {
+	display: flex;
+}
+.pilihan-komputer {
+	margin: 5px auto;
+	border: 1px solid black;
+	width: 100px;
+	height: 100px;
+	background-color: lightblue;
+	text-align: center;
+	line-height: 100px;
+	font-size: 30px;
+}
+.info, .pesan{
+	border: 1px solid black;
+	width: 150px;
+	height: 40px;
+	margin: 10px auto;
+	text-align: center;
+	line-height: 40px;
+	font-size: 25px;
+}
+.info{ width: 400px;  }
+.pesan { font-size: 20px; width: 700px; line-height: 15px;}
+.area-player  ul li {
+	margin: 5px;
+	border: 1px solid black;
+	width: 100px;
+	height: 100px;
+	background-color: lightblue;
+	text-align: center;
+	line-height: 100px;
+	font-size: 30px;
+}
+.area-player ul li:hover {
+	background-color: blue;
+	color: white;
+}

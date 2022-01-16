@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>immediately invoked function</h1>
+
+
+<script>
+	
+// let test = (function tampilNama() {
+// 	return console.log('hello dunia');
+// })();
+const texts = 'Lorem ipsum, dolor sit amet, consectetur adipisicing elit. Veniam exercitationem commodi illum consequuntur nulla sed corrupti quae incidunt dicta. Recusandae tempora quam sapiente excepturi cupiditate aliquid sed facere dolor obcaecati sit ipsum, autem nemo saepe eligendi magnam culpa praesentium officia veniam molestias nobis dicta fugit atque natus necessitatibus iusto. Dicta.'
+
+// cari kata yang terdapat huruf a, i, dan l, tapi tidak terdapat q
+const n = texts.split(' ')
+let result = n.filter( n => n.includes('a') && n.includes('l') && n.includes('i') && !(n.includes('q')) )
+
+console.log(result.length)
+console.log(result)
+
+
+
+
+
+</script>
+</body>
+</html>

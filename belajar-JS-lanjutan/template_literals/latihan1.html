@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>latihan template literals</title>
+</head>
+<body>
+
+   <div id="test"></div>
+
+<script>
+
+// HTML fragemets
+
+// const mhs = {
+//    nama: 'fihan dilan pratama',
+//    umur: 21,
+//    npm: '07351911051',
+//    email: 'fihandilan96@gmail.com'
+// }
+
+// const el = `<div class="mhs">
+//       <h2>${mhs.nama}</h2>
+//       <span class="npm">${mhs.npm}</span>
+// </div>`;
+
+
+
+
+// Looping
+
+// const mhs = [
+//    {
+//       nama: 'fihan dilan pratama',
+//       email: 'fihandilan96@gmail.com'
+//    },
+//    {
+//       nama: 'nakano miku',
+//       email: 'nakanomiku@gmail.com'
+//    },
+//    {
+//       nama: 'nakano itsuki',
+//       email: 'nakanoitsuki@gmail.com'
+//    }
+// ];
+
+// const el = `<div class="mhs">   
+//    ${mhs.map(m => `<ul>
+//                      <li>${m.nama}</li>
+//                      <li>${m.email}</li>
+//                   </ul>`).join('')}
+//             </div>`;
+
+
+
+// conditional
+
+// const lagu = [
+//    {
+//       judul: 'way back home',
+//       penyanyi: 'shaun',
+//       feat: 'conor maynard'
+//    },
+//    {
+//       judul: 'homura',
+//       penyanyi: 'lisa'
+//    }
+// ];
+
+// const el = `<div>
+//    ${lagu.map(lgu => `<ul>
+//                         <li>title  : ${lgu.judul}</li>   
+//                         <li>singer : ${lgu.penyanyi} ${lgu.feat ? `(feat. ${lgu.feat})` : ``}</li>
+//                      </ul>`).join('')}
+//          </div>`;
+
+
+
+// nested (html fragment bersarang)
+
+const mhs = {
+   nama: 'fihan dilan pratama',
+   semester: 4,
+   mataKuliah: [
+      'pemrograman web',
+      'jaringan komputer',
+      'kecerdasan buatan',
+      'kewira-usahaan',
+      'sistem operasi',
+      'komputer dan masyarakat',
+      'etika profesi'
+   ]
+}
+
+function cetakMataKuliah(mataKuliah) {
+   return `<ol>
+         ${mataKuliah.map(mk => `<li>${mk}</li>`).join('')}
+      </ol>`;
+}
+
+const el = `<div>
+      <h2>${mhs.nama}</h2>
+      <span>semester : ${mhs.semester}</span>
+      <h4>mata kuliah : </h4>
+      ${cetakMataKuliah(mhs.mataKuliah)}
+   </div>`;
+
+document.body.innerHTML = el;
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>callback</title>
+</head>
+<body>
+   
+<script>
+    // sycronous callback
+    // function halo(nama) {
+    //     alert(`Halo ${nama}`)
+    // }
+
+    // function tampilkanPesan(callback) {
+    //     const nama = prompt('Masukkan nama : ')
+    //     callback(nama)
+    // }
+
+    // tampilkanPesan(halo);
+
+
+    // const mhs = [
+    //     {
+    //         "nama" : "fihan dilan",
+    //         "npm" : "07351911051",
+    //         "umur" : 21
+    //     },
+    //     {
+    //         "nama" : "nanda",
+    //         "npm" : "07351911052",
+    //         "umur" : 20
+    //     },
+    //     {
+    //         "nama" : "fahri",
+    //         "npm" : "07351911053",
+    //         "umur" : 19
+    //     }
+    // ]
+
+    // console.log('mulai')
+    // mhs.forEach(m => {
+    //     for (let i = 0; i < 10000000; i++) {
+    //         const date = new Date()
+    //     }
+    //     console.log(m.nama)
+    // })
+    // console.log('selesai')
+
+
+
+    // Asycronous callback
+    function getDataMahasiswa(url, success, error) { // succes & error : callback
+        let xhr = new XMLHttpRequest()
+
+        xhr.onreadystatechange = function() {
+            if( xhr.readyState === 4 ) {
+                if( xhr.status === 200 ) {
+                    success(xhr.response)
+                } else if( xhr.status === 404 ) {
+                    error()
+                }
+            }
+        }
+
+        xhr.open('get', url)
+        xhr.send()
+
+    }
+
+    console.log('mulai')
+    // getDataMahasiswa('data/data.json', result => {       //
+    //     const mhs = JSON.parse(result)                   //
+    //     mhs.forEach(m => console.log(m.nama))            // option 1
+    // }, () => {                                           //
+    //     throw new Error('ada yang salah dengan url')     //
+    // })                                                   //
+
+    function success(result) {                              //
+        const mhs = JSON.parse(result)                      //
+        mhs.forEach(m => console.log(m.nama))               //
+    }                                                       //  option 2
+    function error() {                                      //
+        throw new Error('ada yang salah dengan urlnya')     // 
+    }                                                       //
+    
+    getDataMahasiswa('data/data.json', success, error)
+    console.log('selesai')
+
+
+
+</script>
+</body>
+</html>

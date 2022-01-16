@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>closure</title>
+</head>
+<body>
+	<button style="font-size: 30px">counter</button>
+	<h1></h1>
+<script>
+
+	// function init() {
+	// 	// const nama = 'fihan dilan';
+	// 	return function (nama) {
+	// 		console.log(nama);
+	// 	}
+	// }
+	// let panggiNama = init();
+	// panggiNama('fihan');
+
+    // function ucapkanSalam(waktu) {
+    // 	return function (nama) {
+    // 		console.log(`Halo ${nama}, Selamat ${waktu}, Semoga harimu menyenangkan`);
+    // 	}
+    // }
+    // let selamatPagi = ucapkanSalam('pagi');
+    // let selamatSiang = ucapkanSalam('siang');
+    // let selamatMalam = ucapkanSalam('malam');
+
+    // selamatPagi('fihan');
+    // selamatMalam('dilan');
+
+    // console.dir(selamatSiang);
+
+    
+    let add = (function() {
+    	let counter = 0;
+    	return function() {
+    		return ++counter;
+    	}
+    })();
+
+    // let add = (() => {          // versi arrow function
+    //     let counter = 0;
+    //     return () => ++counter;
+    // })();
+
+    const tombol = document.getElementsByTagName('button')[0];
+    const h1 = document.getElementsByTagName('h1')[0];
+    tombol.onclick = function() {
+    	// add();
+    	h1.innerHTML = add();
+    }
+
+
+</script>
+</body>
+</html>
